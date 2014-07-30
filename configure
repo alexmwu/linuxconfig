@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#creates symlinks from home directory to desired dotfiles in linuxdotfiles repo
+
+#####Dotfiles
+
+dir=~/linuxdotfiles	# install it in home dir
+olddir=~/old_dotfiles	#backup old ones
+
+#file names should be same as dotfiles but without the .
+files="bashrc vimrc cshrc"	#files and folders to symlink in homedir
+
+#####Code
+
+#create backup of dotilfes
+echo "Creating $olddir for backup of any existing dotfiles in ~"
+mkdir -p $olddir
+echo "Done"
+
+#change to linuxdotfiles directory
+echo "Changing to $dir directory"
+cd $dir
+echo "Done"
+
+#move any existing dotfiles in home directory to old_dotfiles directory and create symlinks
+for file in $files; do
+    echo "Moving old dotfiles from ~ to $olddir"
+    mv ~/.$file ~/$olddir/
+    echo "Creating symlink to $file in home directory"
+    ln -s $dir/$file ~/.$file
+done
+echo "Done"
+
+sudo cp $dir/mountshareddir /etc/init.d

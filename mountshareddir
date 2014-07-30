@@ -1,0 +1,12 @@
+#!/bin/bash
+#move (mv) to /etc/rc.local for vm
+
+sharename="share"
+
+sudo mkdir /mnt/$sharename
+sudo chmod 777 /mnt/$sharename
+
+#might need to be vboxfs
+sudo mount -t vboxsf -o uid=1000,gid=1000 $sharename /mnt/$sharename
+
+ln -s /mnt/$sharename $HOME/Desktop/$sharename
