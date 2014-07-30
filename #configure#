@@ -31,8 +31,6 @@ for file in $files; do
 done
 echo "Done"
 
-#fedora based
 sudo cp $dir/mountshareddir /etc/init.d
-chkconfig --add mountshareddir
-
-sudo cp $dir/mountshareddir /etc/rc.local #debian distos?
+#sudo cp $dir/mountshareddir /etc/rc.local #debian distos?
+chk

@@ -1,4 +1,10 @@
 #!/bin/bash
+# chkconfig: 2345 95 20
+# description: mount vm shared folder on boot
+# mount vm shared folder on boot
+# processname: mountshareddir
+#5 - chkc
+
 #move (mv) to /etc/rc.local for vm
 
 #name of shared folder
