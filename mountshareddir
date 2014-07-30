@@ -1,6 +1,7 @@
 #!/bin/bash
 #move (mv) to /etc/rc.local for vm
 
+#name of shared folder
 sharename="share"
 
 sudo mkdir /mnt/$sharename

@@ -8,7 +8,7 @@ dir=~/linuxdotfiles	# install it in home dir
 olddir=~/old_dotfiles	#backup old ones
 
 #file names should be same as dotfiles but without the .
-files="bashrc vimrc cshrc"	#files and folders to symlink in homedir
+files="bashrc vimrc cshrc wgetrc curlrc"	#files and folders to symlink in homedir
 
 #####Code
 
