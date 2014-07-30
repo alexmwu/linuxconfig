@@ -31,8 +31,9 @@ for file in $files; do
 done
 echo "Done"
 
+#the below doesn't work (to init on boot) but the mountshareddir script does work
 #fedora based
-sudo cp $dir/mountshareddir /etc/init.d
-chkconfig --add mountshareddir
+#sudo cp $dir/mountshareddir /etc/init.d
+#chkconfig --add mountshareddir
 
-sudo cp $dir/mountshareddir /etc/rc.local #debian distos?
+#sudo cp $dir/mountshareddir /etc/rc.local #debian distos
