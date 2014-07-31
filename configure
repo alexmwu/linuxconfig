@@ -4,7 +4,7 @@
 
 #####Dotfiles
 
-dir=~/linuxdotfiles	# install it in home dir
+dir=~/Documents/linuxdotfiles	# install it in home dir
 olddir=~/old_dotfiles	#backup old ones
 
 #file names should be same as dotfiles but without the .
@@ -25,7 +25,7 @@ echo "Done"
 #move any existing dotfiles in home directory to old_dotfiles directory and create symlinks
 for file in $files; do
     echo "Moving old dotfiles from ~ to $olddir"
-    mv ~/.$file ~/$olddir/
+    mv ~/.$file $olddir
     echo "Creating symlink to $file in home directory"
     ln -s $dir/$file ~/.$file
 done
@@ -36,4 +36,4 @@ echo "Done"
 #sudo cp $dir/mountshareddir /etc/init.d
 #chkconfig --add mountshareddir
 
-#sudo cp $dir/mountshareddir /etc/rc.local #debian distos
+#sudo cp $dir/mountshareddir /etc/rc.local #debian distros
