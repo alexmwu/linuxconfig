@@ -31,6 +31,13 @@ for file in $files; do
 done
 echo "Done"
 
+
+#configure git
+echo "Changing git global settings so git blame lies on awu3@nd.edu and GitHub blame on user alexmwu"
+git config --global user.name "Alex Wu"
+git config --global user.email awu3@nd.edu
+
+
 #the below doesn't work (to init on boot) but the mountshareddir script does work
 #fedora based
 #sudo cp $dir/mountshareddir /etc/init.d
