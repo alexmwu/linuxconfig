@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#to configure proxy settings
+sudo vi "proxy=http://gatekeeper.mitre.org:80" >> /etc/yum.conf
+sudo yum update
+sudo yum install gcc kernel-devel kernel-header dkms make bzip2 perl
+sudo yum install emacs
+sudo yum install git
+git config --global http.proxy http://gatekeeper.mitre.org:80
