@@ -22,15 +22,18 @@ echo "Changing to $dir directory"
 cd $dir
 echo "Done"
 
-#move any existing dotfiles in home directory to old_dotfiles directory and create symlinks
-for file in $files; do
-    echo "Moving old dotfiles from ~ to $olddir"
-    mv ~/.$file $olddir
-    echo "Creating symlink to $file in home directory"
-    ln -s $dir/$file ~/.$file
-done
-echo "Done"
-
+if [[ ! -d ~/old_dotfiles ]]; then
+	#move any existing dotfiles in home directory to old_dotfiles directory and create symlinks
+	for file in $files; do
+	    echo "Moving old dotfiles from ~ to $olddir"
+	    mv ~/.$file $olddir
+	    echo "Appending custom dotfiles to current ones"
+	    cat $dir/$file >> ~/.$file 
+	#    echo "Creating symlink to $file in home directory"
+	#    ln -s $dir/$file ~/.$file
+	done
+	echo "Done"
+fi
 
 #configure git
 echo "Changing git global settings so git blame lies on awu3@nd.edu and GitHub blame on user alexmwu"
